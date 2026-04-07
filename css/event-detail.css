@@ -468,11 +468,27 @@ main {
     padding: 0 18px;
   }
 
+  .site-brand a {
+    font-size: 16px;
+    margin-left: 4px;
+  }
+
+  .site-logo-center img {
+    height: 28px;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
   .carousel-arrow.left {
-    left: -30px;
+    left: 6px;
   }
 
   .carousel-arrow.right {
-    right: -30px;
+    right: 6px;
   }
 }

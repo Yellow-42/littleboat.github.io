@@ -363,6 +363,15 @@ body {
     display: none;
   }
 
+  .site-brand a {
+    font-size: 16px;
+    margin-left: 4px;
+  }
+
+  .site-logo-center img {
+    height: 28px;
+  }
+
   .site-nav.is-open {
     display: flex;
   }
