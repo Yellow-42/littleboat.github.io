@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Little Boat - Czech2509</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/event-detail.css" />
+</head>
+<body>
+  <div id="page-top"></div>
+
+  <!-- 1. Same nav as Archive page -->
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="/#top">Little Boat</a>
+    </div>
+
+    <div class="site-logo-center">
+      <a href="/#top">
+        <img src="../../image/logo.png" alt="Little Boat logo">
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/html/screening.html">Screening</a>
+      <a href="/html/about.html">About</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      Menu
+    </button>
+  </header>
+
+  <main>
+    <!-- 2. Intro section with gradient -->
+    <section class="event-hero">
+      <div class="event-hero-inner">
+        <!-- 2.1 Back to Archive -->
+        <a href="/html/screening.html" class="back-link">&lt; Back to Screening</a>
+
+        <div class="event-hero-content">
+          <div class="event-hero-text">
+            <!-- 2.2 Title + description -->
+            <h1>Czech New Wave Screening</h1>
+            <p>This program surveys the daring spirit of the Czechoslovak New Wave, a movement that flourished briefly in the 1960s before being crushed by political repression. From Forman's sly social satire The Firemen's Ball to Němec's surreal resistance in Diamonds of the Night, from Chytilová's anarchic Daisies to Menzel's bittersweet Larks on a String, these films share a defiant wit and formal inventiveness.</p>
+          </div>
+
+          <!-- 2.2 Image on the right -->
+          <div class="event-hero-image">
+            <img src="../../image/Czech2509/main.JPG" alt="Czech2509">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. Main body with carousel -->
+    <section class="event-body">
+      <div class="event-body-inner">
+        <!-- Left: film text (static position, content changes) -->
+        <div class="film-info">
+          <h2 id="film-title"></h2>
+          <p id="film-meta" class="film-meta"></p>
+          <br>
+          <p id="film-cast" class="film-cast"></p>
+        </div>
+
+        <!-- Right: carousel + description -->
+        <div class="film-visual">
+        <div class="carousel-window">
+            <button class="carousel-arrow left" aria-label="Previous film">&#8249;</button>
+
+            <div class="carousel-viewport"><div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="../../image/Czech2509/1.JPG" alt="Screening 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Czech2509/2.JPG" alt="Screening 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Czech2509/3.JPG" alt="Screening 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Czech2509/4.jpg" alt="Screening 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Czech2509/5.JPG" alt="Screening 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Czech2509/6.jpg" alt="Screening 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Czech2509/7.jpg" alt="Screening 7">
+            </div>
+            </div></div>
+
+            <button class="carousel-arrow right" aria-label="Next film">&#8250;</button>
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+            <span class="dot" data-index="5"></span>
+            <span class="dot" data-index="6"></span>
+        </div>
+
+        <p id="film-description" class="film-description"></p>
+        </div>
+
+
+          <!-- 4.1 / 4.3 Film description (aligned with image, text fades) -->
+          <p id="film-description" class="film-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact (same as Archive) -->
+    <section class="archive-contact">
+      <div class="archive-contact-inner">
+        <div class="contact-divider"></div>
+        <p>For any research or screening-related request, you can contact us at:</p>
+        <div class="contact-pill">contact@littleboatfilm.com</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Footer (same as Archive) -->
+  <footer id="footer">
+    <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
+  </footer>
+
+  <!-- Back to top -->
+  <a id="to-top" href="#page-top" aria-label="Back to top"></a>
+
+  <script>
+    // Back-to-top visibility
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // 4.2 / 4.3 Carousel logic
+    const films = [
+      {
+        title: "The Firemen's Ball",
+        meta: "1967 / Directed by Miloš Forman",
+        cast: "Cast: Jan Vostrčil, Josef Šebánek, František Debelka",
+        description: "The firemen of a provincial Czechoslovakian town throw a ball in honor of the old chief's retirement. There will be music and dancing, a beauty pageant and a raffle. The whole town will be in attendance. However, the proceedings are dogged by difficulty at every step. Workplace injuries, stolen prizes, a shortage of pretty girls… and fire."
+      },
+      {
+        title: "The Ear",
+        meta: "1970 / Directed by Karel Kachyňa",
+        cast: "Cast: Radoslav Brzobohatý, Jiřina Bohdalová, Jiří Císler",
+        description: "Upon returning home from an official party, a Czech government official and his wife discover it bugged and surveilled by mysterious figures, driving them to paranoia and intensifying their discontents with one another."
+      },
+      {
+        title: "Diamonds of the Night",
+        meta: "1964 / Directed by Jan Němec",
+        cast: "Cast: Ladislav Janský, Antonín Kumbera, Ilse Bischofová",
+        description: "Two Jewish boys escape from a train transporting them from one concentration camp to another. Beyond themes of war and anti-Nazism, the film concerns itself with man's struggle to preserve human dignity."
+      },
+      {
+        title: "The Sun in a Net",
+        meta: "1963 / Directed by Štefan Uher",
+        cast: "Cast: Marián Bielik, Jana Beláková, Eliška Nosálová",
+        description: "Oldrich 'Fajolo' Fajták (Marián Bielik), a student who directs quasi-existentialist verbal abuse at his girlfriend Bela Blazejová (Jana Beláková), takes off to a formally volunteer summer work camp at a farm where he meets her grandfather."
+      },
+      {
+        title: "Daisies",
+        meta: "1966 / Directed by Věra Chytilová",
+        cast: "Cast: Jitka Cerková, Ivana Karbanová, Helena Anýžová",
+        description: "Two teenage girls embark on a series of destructive pranks in which they consume and destroy the world around them."
+      },
+      {
+        title: "Larks on a String",
+        meta: "1969 / Directed by Jiří Menzel",
+        cast: "Cast: Rudolf Hrušínský, Václav Neckář, Jitka Zelenohorská",
+        description: "In post-WWII Communist Czechoslovakia, several characters considered bourgeois are sentenced to work in a junkyard for rehabilitation. Among them is a young man who pines for a female convict."
+      },
+      {
+        title: "The Joke",
+        meta: "1969 / Directed by Jaromil Jireš",
+        cast: "Cast: Josef Somr, Jana Dítětová, Luděk Munzar",
+        description: "In the 1950s, Ludvik Jahn was expelled from the Communist Party and the University by his fellow students, because of a politically incorrect note he sent to his girlfriend. Fifteen years later, he tries to get his revenge by seducing Helena, the wife of one of his accusers."
+      }
+    ];
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+
+    const filmTitleEl = document.getElementById('film-title');
+    const filmMetaEl = document.getElementById('film-meta');
+    const filmCastEl = document.getElementById('film-cast');
+    const filmDescEl = document.getElementById('film-description');
+
+    let currentIndex = 0;
+
+    function updateText(index) {
+      // fade out
+      [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+        el.classList.remove('fade-in');
+        el.classList.add('fade-out');
+      });
+
+      setTimeout(() => {
+        const film = films[index];
+        filmTitleEl.textContent = film.title;
+        filmMetaEl.textContent = film.meta;
+        filmCastEl.textContent = film.cast;
+        filmDescEl.textContent = film.description;
+
+        // fade in
+        [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+          el.classList.remove('fade-out');
+          el.classList.add('fade-in');
+        });
+      }, 200); // brief overlap before new text
+    }
+
+    function updateCarousel(index) {
+      // move images horizontally
+      const offset = -index * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
+      // update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      // update text
+      updateText(index);
+    }
+
+    function goTo(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    }
+
+    if (leftArrow) leftArrow.addEventListener('click', () => goTo(currentIndex - 1));
+    if (rightArrow) rightArrow.addEventListener('click', () => goTo(currentIndex + 1));
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.index);
+        goTo(idx);
+      });
+    });
+
+    // init
+    if (films.length > 0) updateCarousel(0);
+  </script>
+</body>
+</html>
