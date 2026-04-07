@@ -346,10 +346,12 @@ body {
 @media (max-width: 720px) {
   .site-header {
     padding: 18px 16px;
+    align-items: center;
   }
 
   .nav-toggle {
     display: inline-block;
+    margin-top: 0;
   }
 
   .site-nav {
@@ -368,8 +370,11 @@ body {
     margin-left: 4px;
   }
 
-  .site-logo-center img {
-    height: 28px;
+  .site-logo {
+    width: 26px;
+    height: 26px;
+    margin-top: 0;
+    margin-right: 10px;
   }
 
   .site-nav.is-open {
