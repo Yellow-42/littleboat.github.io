@@ -369,19 +369,23 @@ main {
 
   .archive-hero-inner,
   .archive-inner {
-    padding: 0 18px;
+    padding: 0 16px;
   }
 
   .timeline {
-    padding-left: 64px;
+    padding-left: 0;
   }
 
   .timeline::before {
-    left: 24px;
+    display: none;
   }
 
   .timeline-event {
     grid-template-columns: 1fr;
     row-gap: 10px;
+  }
+
+  .event-text h3 {
+    font-size: 18px;
   }
 }
