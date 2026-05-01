@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Little Boat - Queer2604</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/event-detail.css" />
+</head>
+<body>
+  <div id="page-top"></div>
+
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="/#top">Little Boat</a>
+    </div>
+
+    <div class="site-logo-center">
+      <a href="/#top">
+        <img src="../../image/logo.png" alt="Little Boat logo">
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/html/screening.html">Screening</a>
+      <a href="/html/about.html">About</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      Menu
+    </button>
+  </header>
+
+  <main>
+    <section class="event-hero">
+      <div class="event-hero-inner">
+        <a href="/html/screening.html" class="back-link">&lt; Back to Screening</a>
+
+        <div class="event-hero-content">
+          <div class="event-hero-text">
+            <h1>Queer Panorama</h1>
+            <p>A program devoted to queer cinema across geographies and generations. These films explore desire, identity, and the intimate worlds that mainstream narratives often overlook, tracing how queerness shapes the way we look, love, and remember. Together, they form a constellation of voices.</p>
+          </div>
+
+          <div class="event-hero-image">
+            <img src="../../image/Queer2604/main.jpg" alt="Queer2604">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="event-body">
+      <div class="event-body-inner">
+        <div class="film-info">
+          <h2 id="film-title"></h2>
+          <p id="film-meta" class="film-meta"></p>
+          <br>
+          <p id="film-cast" class="film-cast"></p>
+        </div>
+
+        <div class="film-visual">
+        <div class="carousel-window">
+            <button class="carousel-arrow left" aria-label="Previous film">&#8249;</button>
+
+            <div class="carousel-viewport"><div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="../../image/Queer2604/1.jpg" alt="Screening 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Queer2604/2.jpg" alt="Screening 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Queer2604/3.jpg" alt="Screening 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Queer2604/4.jpg" alt="Screening 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Queer2604/5.jpg" alt="Screening 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Queer2604/6.jpg" alt="Screening 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Queer2604/7.jpg" alt="Screening 7">
+            </div>
+            </div></div>
+
+            <button class="carousel-arrow right" aria-label="Next film">&#8250;</button>
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+            <span class="dot" data-index="5"></span>
+            <span class="dot" data-index="6"></span>
+        </div>
+
+        <p id="film-description" class="film-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="archive-contact">
+      <div class="archive-contact-inner">
+        <div class="contact-divider"></div>
+        <p>For any research or screening-related request, you can contact us at:</p>
+        <div class="contact-pills">
+          <div class="contact-pill">yangtao0410@gmail.com</div>
+          <div class="contact-pill">tikicai03@gmail.com</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
+  </footer>
+
+  <a id="to-top" href="#page-top" aria-label="Back to top"></a>
+
+  <script>
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    const films = [
+      {
+            "title": "The Wedding Banquet",
+            "meta": "1993 / Directed by Ang Lee",
+            "cast": "Cast: Winston Chao, Gua Ah-leh, Lung Sihung, May Chin",
+            "description": "A Taiwanese-American man is happily settled in New York with his American boyfriend. He plans a marriage of convenience to a Chinese woman in order to keep his parents off his back and to get the woman a green card. Chaos follows when his parents arrive in New York for the wedding."
+      },
+      {
+            "title": "Madchen in Uniform",
+            "meta": "1931 / Directed by Leontine Sagan, Carl Froelich",
+            "cast": "Cast: Emilia Unda, Dorothea Wieck, Hedwig Schlichter",
+            "description": "What is its strange appeal? Why does it stir the emotions? A sensitive girl is sent to an all-girls boarding school and develops a romantic attachment to one of her teachers."
+      },
+      {
+            "title": "I Only Rest in the Storm",
+            "meta": "2025 / Directed by Pedro Pinho",
+            "cast": "Cast: Cleo Diara, Sergio Coragem, Jonathan Guilherme",
+            "description": "Sergio travels to a metropolis in West Africa to work for an NGO as an environmental engineer on a road project between the desert and the forest. There, he becomes entangled in an intimate yet unbalanced relationship with two inhabitants of the city, Diara and Gui. As neo-colonial dynamics among the expatriate community unravel, this fragile bond becomes his only refuge from an impending collapse into solitude or barbarism."
+      },
+      {
+            "title": "The River",
+            "meta": "1997 / Directed by Tsai Ming-liang",
+            "cast": "Cast: Lee Kang-sheng, Miao Tian, Lu Yi-ching",
+            "description": "A young man develops severe neck pain after swimming in a polluted river for a movie shoot, but nobody can provide him any relief."
+      },
+      {
+            "title": "Suk Suk",
+            "meta": "2019 / Directed by Ray Yeung",
+            "cast": "Cast: Tai Bo, Ben Yuen Foo-Wah, Patra Au Ga-Man",
+            "description": "One day Pak, a taxi driver who refuses to retire, meets Hoi, a retired single father, in a park. Although both are secretly gay, they are proud of the families they have created through hard work and determination. Yet in that brief initial encounter, something is unleashed in them which had been suppressed for so many years. As both men recount and recall their personal histories, they also contemplate a possible future together."
+      },
+      {
+            "title": "Misericordia",
+            "meta": "2024 / Directed by Alain Guiraudie",
+            "cast": "Cast: Felix Kysyl, Catherine Frot, Jean-Baptiste Durand",
+            "description": "Jeremie returns to his hometown for the funeral of his former boss, the village baker. He decides to stay for a few days with Martine, the man's widow. A mysterious disappearance, a threatening neighbor and a priest with strange intentions make Jeremie's short stay in the village take an unexpected turn."
+      },
+      {
+            "title": "Queer Panorama",
+            "meta": "2025 / Directed by Jun Li",
+            "cast": "Cast: Jayden Cheung, Erfan Shekarriz, Arm Anatphikorn",
+            "description": "A gay man impersonates men he has had sex with and brings this new persona with him to his next hook-up. Only by pretending to be someone else can he be truly himself."
+      }
+];
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+
+    const filmTitleEl = document.getElementById('film-title');
+    const filmMetaEl = document.getElementById('film-meta');
+    const filmCastEl = document.getElementById('film-cast');
+    const filmDescEl = document.getElementById('film-description');
+
+    let currentIndex = 0;
+
+    function updateText(index) {
+      [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+        el.classList.remove('fade-in');
+        el.classList.add('fade-out');
+      });
+
+      setTimeout(() => {
+        const film = films[index];
+        filmTitleEl.textContent = film.title;
+        filmMetaEl.textContent = film.meta;
+        filmCastEl.textContent = film.cast;
+        filmDescEl.textContent = film.description;
+
+        [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+          el.classList.remove('fade-out');
+          el.classList.add('fade-in');
+        });
+      }, 200);
+    }
+
+    function updateCarousel(index) {
+      const offset = -index * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      updateText(index);
+    }
+
+    function goTo(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    }
+
+    if (leftArrow) leftArrow.addEventListener('click', () => goTo(currentIndex - 1));
+    if (rightArrow) rightArrow.addEventListener('click', () => goTo(currentIndex + 1));
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.index);
+        goTo(idx);
+      });
+    });
+
+    if (films.length > 0) updateCarousel(0);
+  </script>
+</body>
+</html>

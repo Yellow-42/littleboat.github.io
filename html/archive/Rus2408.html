@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Little Boat - Rus2408</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/event-detail.css" />
+</head>
+<body>
+  <div id="page-top"></div>
+
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="/#top">Little Boat</a>
+    </div>
+
+    <div class="site-logo-center">
+      <a href="/#top">
+        <img src="../../image/logo.png" alt="Little Boat logo">
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/html/screening.html">Screening</a>
+      <a href="/html/about.html">About</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      Menu
+    </button>
+  </header>
+
+  <main>
+    <section class="event-hero">
+      <div class="event-hero-inner">
+        <a href="/html/screening.html" class="back-link">&lt; Back to Screening</a>
+
+        <div class="event-hero-content">
+          <div class="event-hero-text">
+            <h1>Soviet Cinema Screening</h1>
+            <p>Two masterworks of late-Soviet cinema, both meditations on memory, faith, and the bonds of kinship. Tarkovsky's autobiographical Mirror weaves dream, history, and childhood into one of the most personal films ever made; Parajanov's Shadows of Forgotten Ancestors transforms Carpathian folk life into a delirious, color-saturated lament.</p>
+          </div>
+
+          <div class="event-hero-image">
+            <img src="../../image/Rus2408/main.jpg" alt="Rus2408">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="event-body">
+      <div class="event-body-inner">
+        <div class="film-info">
+          <h2 id="film-title"></h2>
+          <p id="film-meta" class="film-meta"></p>
+          <br>
+          <p id="film-cast" class="film-cast"></p>
+        </div>
+
+        <div class="film-visual">
+        <div class="carousel-window">
+            <button class="carousel-arrow left" aria-label="Previous film">&#8249;</button>
+
+            <div class="carousel-viewport"><div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="../../image/Rus2408/1.jpg" alt="Screening 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Rus2408/2.jpg" alt="Screening 2">
+            </div>
+            </div></div>
+
+            <button class="carousel-arrow right" aria-label="Next film">&#8250;</button>
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+        </div>
+
+        <p id="film-description" class="film-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="archive-contact">
+      <div class="archive-contact-inner">
+        <div class="contact-divider"></div>
+        <p>For any research or screening-related request, you can contact us at:</p>
+        <div class="contact-pills">
+          <div class="contact-pill">yangtao0410@gmail.com</div>
+          <div class="contact-pill">tikicai03@gmail.com</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
+  </footer>
+
+  <a id="to-top" href="#page-top" aria-label="Back to top"></a>
+
+  <script>
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    const films = [
+      {
+            "title": "Mirror",
+            "meta": "1975 / Directed by Andrei Tarkovsky",
+            "cast": "Cast: Margarita Terekhova, Ignat Daniltsev, Larisa Tarkovskaya",
+            "description": "A dying man in his forties recalls his childhood, his mother, the war and personal moments that tell of and juxtapose pivotal moments in Soviet history with daily life."
+      },
+      {
+            "title": "Shadows of Forgotten Ancestors",
+            "meta": "1965 / Directed by Sergei Parajanov",
+            "cast": "Cast: Ivan Mykolaichuk, Larysa Kadochnykova, Tatyana Bestayeva",
+            "description": "In the Carpathian Mountains of 19th-century Ukraine, love, hate, life and death among the Hutsul people are as they've been since time began. Ivan is drawn to Marichka, the beautiful young daughter of the man who killed his father. But fate tragically decrees that the two lovers will remain apart."
+      }
+];
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+
+    const filmTitleEl = document.getElementById('film-title');
+    const filmMetaEl = document.getElementById('film-meta');
+    const filmCastEl = document.getElementById('film-cast');
+    const filmDescEl = document.getElementById('film-description');
+
+    let currentIndex = 0;
+
+    function updateText(index) {
+      [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+        el.classList.remove('fade-in');
+        el.classList.add('fade-out');
+      });
+
+      setTimeout(() => {
+        const film = films[index];
+        filmTitleEl.textContent = film.title;
+        filmMetaEl.textContent = film.meta;
+        filmCastEl.textContent = film.cast;
+        filmDescEl.textContent = film.description;
+
+        [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+          el.classList.remove('fade-out');
+          el.classList.add('fade-in');
+        });
+      }, 200);
+    }
+
+    function updateCarousel(index) {
+      const offset = -index * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      updateText(index);
+    }
+
+    function goTo(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    }
+
+    if (leftArrow) leftArrow.addEventListener('click', () => goTo(currentIndex - 1));
+    if (rightArrow) rightArrow.addEventListener('click', () => goTo(currentIndex + 1));
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.index);
+        goTo(idx);
+      });
+    });
+
+    if (films.length > 0) updateCarousel(0);
+  </script>
+</body>
+</html>
